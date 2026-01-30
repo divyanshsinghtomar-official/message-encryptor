@@ -34,8 +34,7 @@ Python 3.x
 
 Clone the repository:
 
-git clone https://github.com/your-username/message-encryptor.git
-
+https://github.com/divyanshsinghtomar-official/message-encryptor.git
 
 Navigate to the project folder:
 
