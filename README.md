@@ -1,26 +1,101 @@
-Message Encryptor in Python 🔐
+🔐 Message Encryptor in Python
 
-This is a simple Python-based message encryptor and decryptor that uses key-based substitution encryption.
-The program generates a randomized key to encrypt messages and uses the same key to decrypt them back to the original text.
+A simple Python program that encrypts and decrypts text messages using a key-based substitution encryption technique.
+Each character in the message is replaced using a randomized key, and the same key is used to decrypt the message back to its original form.
 
-Features
+This project was built to practice Python fundamentals and understand basic encryption logic.
 
-Encrypts any text message using a shuffled character key
+🚀 Features
 
-Decrypts encrypted messages back to the original form
+Encrypts plain text messages
 
-Uses Python’s string and random modules
+Decrypts encrypted messages
+
+Uses a randomized character key
 
 Beginner-friendly and easy to understand
 
-Why I built this
+🧠 How It Works
 
-I built this project while learning Python to understand:
+A list of characters (letters, digits, symbols, space) is created
 
-How encryption logic works
+A shuffled copy of this list acts as the encryption key
 
-Character mapping and indexing
+Each character in the message is mapped to a new character using index-based substitution
 
-Working with lists, strings, and randomness
+Decryption reverses the process using the same key
 
-This is a learning project and a step toward building more advanced security and AI-related applications.
+🛠️ Requirements
+
+Python 3.x
+(No external libraries required)
+
+▶️ How to Run
+
+Clone the repository:
+
+git clone https://github.com/your-username/message-encryptor.git
+
+
+Navigate to the project folder:
+
+cd message-encryptor
+
+
+Run the script:
+
+python encryptor.py
+
+📌 Code
+import random
+import string
+
+chars = " " + string.punctuation + string.digits + string.ascii_letters
+chars = list(chars)
+key = chars.copy()
+random.shuffle(key)
+
+# Encrypt
+plain_text = input("Enter the message: ")
+cipher_text = ""
+
+for letter in plain_text:
+    index = chars.index(letter)
+    cipher_text += key[index]
+
+print(f"Original message: {plain_text}")
+print(f"Encrypted message: {cipher_text}")
+
+# Decrypt
+cipher_text = input("Enter the encrypted message: ")
+plain_text = ""
+
+for letter in cipher_text:
+    index = key.index(letter)
+    plain_text += chars[index]
+
+print(f"Decrypted message: {plain_text}")
+
+📚 What I Learned
+
+Working with strings and lists
+
+Index-based character mapping
+
+Using Python’s random and string modules
+
+Understanding basic encryption concepts
+
+🔮 Future Improvements
+
+Save and load encryption keys
+
+Password-based key generation
+
+Convert into a CLI tool
+
+Improve security using stronger encryption methods
+
+⚠️ Disclaimer
+
+This project is for learning purposes only and should not be used for real-world secure communication.
