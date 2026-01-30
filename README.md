@@ -54,7 +54,6 @@ chars = " " + string.punctuation + string.digits + string.ascii_letters
 chars = list(chars)
 key = chars.copy()
 random.shuffle(key)
-
 # Encrypt
 plain_text = input("Enter the message: ")
 cipher_text = ""
@@ -65,7 +64,6 @@ for letter in plain_text:
 
 print(f"Original message: {plain_text}")
 print(f"Encrypted message: {cipher_text}")
-
 # Decrypt
 cipher_text = input("Enter the encrypted message: ")
 plain_text = ""
