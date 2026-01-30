@@ -44,35 +44,31 @@ cd message-encryptor
 
 Run the script:
 
-python encryptor.py
+python main.py
 
 📌 Code
 import random
 import string
-
 chars = " " + string.punctuation + string.digits + string.ascii_letters
 chars = list(chars)
 key = chars.copy()
 random.shuffle(key)
-# Encrypt
 plain_text = input("Enter the message: ")
 cipher_text = ""
-
 for letter in plain_text:
     index = chars.index(letter)
     cipher_text += key[index]
-
 print(f"Original message: {plain_text}")
 print(f"Encrypted message: {cipher_text}")
-# Decrypt
 cipher_text = input("Enter the encrypted message: ")
 plain_text = ""
-
 for letter in cipher_text:
     index = key.index(letter)
     plain_text += chars[index]
-
 print(f"Decrypted message: {plain_text}")
+
+<img width="1373" height="130" alt="Screenshot 2026-01-30 132943" src="https://github.com/user-attachments/assets/4959fb8a-5c61-442a-8fb6-2bd58aba8796" />
+
 
 📚 What I Learned
 
